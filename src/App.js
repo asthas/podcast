@@ -1,10 +1,10 @@
 import React from 'react';
-import Navbar from './components/Navbar'
+import NavItems from './components/Navitems'
 import './App.css';
 
 const PodcastApp = () => (
   <div>
-    <Navbar />
+    <NavItems />
   </div>
 )
 
