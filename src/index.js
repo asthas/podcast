@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import PodcastApp from './App';
-import thunkMiddleWare from 'redux-thunk';
+import thunkMiddleware from 'redux-thunk';
 import createLogger from 'redux-logger';
-import fetchPodcasts from './actions';
+import { fetchPodcasts } from './actions';
 import reducers from './reducers';
-import { createStore, applyMiddleWare } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import './index.css';
 
@@ -13,8 +13,8 @@ const loggerMiddleware = createLogger()
 
 const store = createStore(
   reducers,
-  applyMiddleWare(
-    thunkMiddleWare,
+  applyMiddleware(
+    thunkMiddleware,
     loggerMiddleware
   )
 );

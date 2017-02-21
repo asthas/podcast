@@ -20,7 +20,7 @@ const receivePodcasts = (typeOfPodcast, json) => {
 	}
 }
 
-const setActiveNavItem = (viewHead) => {
+export const setActiveNavItem = (viewHead) => {
 	return {
 		type: 'SET_ACTIVE_NAV_ITEM',
 		viewHead
@@ -29,7 +29,7 @@ const setActiveNavItem = (viewHead) => {
 
 //Thunk action creator. Helps action to return function instead of action objects
 
-const fetchPodcasts = (typeOfPodcast) => {
+export const fetchPodcasts = (typeOfPodcast) => {
 	return (dispatch) => {
 		dispatch(requestPodcasts(typeOfPodcast))
 		return fetch(`https://api.podcst.io/${typeOfPodcast}`)
