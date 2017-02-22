@@ -4,11 +4,9 @@ import { connect } from 'react-redux';
 import { setActiveNavItem } from '../actions';
 
 const mapStateToProps = (state) => {
-  console.log(state.navItems.viewHeads)
-  console.log(state.navItems.activeNavItem)
   return {
-    viewHeads: {state.navItems.viewHeads},
-    activeNav: {state} 
+    viewHeads: state.navItems.viewHeads,
+    activeNav: state.navItems.activeNavItem
   }
 }
 

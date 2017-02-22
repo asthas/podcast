@@ -9,7 +9,7 @@ const NavItem = ({
   <li
     onClick={onClick}
     style={{
-      background: viewHead === activeNav ? 'grey' : '#E0E0E0'
+      background: viewHead === activeNav ? '#00796B' : '#009688'
     }}
   >  
     {viewHead}

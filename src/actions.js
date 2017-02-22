@@ -15,7 +15,7 @@ const receivePodcasts = (typeOfPodcast, json) => {
 	return {
 		type: 'RECEIVE_PODCAST',
 		typeOfPodcast,
-		podcasts: json.data.children(child => child.data),
+		podcasts: json.data.podcasts,
 		receivedAt: Date.now()
 	}
 }
