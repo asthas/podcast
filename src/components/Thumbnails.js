@@ -9,6 +9,8 @@ const Thumbnails = ({
 			<Thumbnail 
 				key={podcast.thumbnail}
 				thumbnail={podcast.thumbnail}
+				title={podcast.title}
+				url={podcast.url}
 			/>
 		)}
 	</div>

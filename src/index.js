@@ -19,7 +19,7 @@ const store = createStore(
   )
 );
 
-store.dispatch(fetchPodcasts('popular')).then(()=>
+store.dispatch(fetchPodcasts('featured')).then(()=>
   console.log(store.getState())
 )
 

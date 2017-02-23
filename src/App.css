@@ -40,13 +40,25 @@ li:hover{
 .thumbnails-container{
   width: 100%;
   height: 100%;
-  margin: 2em;
+  margin-left: 8em;
+  margin-top: 2em;
 }
 
 .thumbnail{
   width: 300px;
   height: 300px;
+  border: 5px solid #FFC107;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+.podcast-title{
+  margin: 1em;
+  font-size: 18px;
+}
+.podcast-item-container{
   display: inline-block;
+  text-align: center;
 }
 
 @keyframes App-logo-spin {
