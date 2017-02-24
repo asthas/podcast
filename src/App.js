@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from './containers/Navbar';
 import ActiveView from './containers/ActiveView';
-import './App.css';
+import './css/App.css';
 
 const PodcastApp = () => (
   <div>

@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 import {
-	REQUEST_PODCAST, RECEIVE_PODCAST
+	REQUEST_PODCAST, RECEIVE_PODCAST, REQUEST_EPISODES, RECEIVE_EPISODES
 } from './actions'
 
 const podcasts = (state={
@@ -43,9 +43,33 @@ const navItems = (state = {
   }
 }
 
+const episodes = (state={
+	isFetching: false,
+	items:[]
+}, action) => {
+	switch(action.type){
+		case 'REQUEST_PODCAST':
+			return{
+				...state,
+				isFetching: true
+			}
+		case 'RECEIVE_EPISODES':
+			return{
+				...state,
+				isFetching: false,
+				items: action.episodes,
+				lastUpdated: action.receivedAt
+			}
+		default:
+			return state
+	}
+}
+
+
 const reducers = combineReducers({
 	podcasts,
-	navItems
+	navItems,
+	episodes
 })
 
 export default reducers

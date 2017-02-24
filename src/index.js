@@ -1,13 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import PodcastApp from './App';
+import EpisodesView from './EpisodesView';
 import thunkMiddleware from 'redux-thunk';
 import createLogger from 'redux-logger';
 import { fetchPodcasts } from './actions';
 import reducers from './reducers';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
-import './index.css';
+import { Router, Route, browserHistory} from 'react-router';
+import './css/index.css';
 
 const loggerMiddleware = createLogger()
 
@@ -26,7 +28,10 @@ store.dispatch(fetchPodcasts('featured')).then(()=>
 
 ReactDOM.render(
 	<Provider store={store}>
-  	<PodcastApp />
+  	<Router history={browserHistory}>
+      <Route path="/" component={PodcastApp} />
+      <Route path="/podcast/(:id)" component={EpisodesView}/>
+    </Router>
   </Provider>,
   document.getElementById('root')
 );
