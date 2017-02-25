@@ -11,8 +11,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
 	return{
-		onEpisodeClick: (url) => {
-			dispatch(playEpisode(url))
+		onEpisodeClick: (episode) => {
+			dispatch(playEpisode(episode))
 		}
 	}
 }

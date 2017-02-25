@@ -15,7 +15,7 @@ const Episodes = ({
 				id={episode.id}
 				isVideo={episode.isVideo}
 				publishedAt={episode.publishedAt}
-				onClick={()=>onEpisodeClick(episode.url)}
+				onClick={()=>onEpisodeClick(episode)}
 			/>
 		)}
 	</div>

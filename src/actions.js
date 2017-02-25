@@ -67,9 +67,16 @@ export const fetchEpisodes = (id) => {
 	}
 }
 
-export const playEpisode = (url) => {
+export const playEpisode = (episode) => {
 	return{
 		type: 'PLAY_EPISODE',
-		url
+		episode
+	}
+}
+
+export const togglePlayPause = (isPlaying) => {
+	return{
+		type: 'TOGGLE_PLAY_PAUSE',
+		isPlaying
 	}
 }

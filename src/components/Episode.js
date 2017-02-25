@@ -23,12 +23,6 @@ const Episode = ({
 		<div className="episode-duration">
 			{moment(duration).format('hh:mm:ss')}
 		</div>
-		<div className="episode-audio-container">
-			// <audio src={url} className="episode-audio"></audio>
-			audio = new Howl({
-				src: ['url']
-			})
-		</div>
 	</div>
 )
 

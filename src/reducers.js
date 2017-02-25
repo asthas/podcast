@@ -1,7 +1,8 @@
 import { combineReducers } from 'redux';
 import {
 	REQUEST_PODCAST, RECEIVE_PODCAST, REQUEST_EPISODES, RECEIVE_EPISODES
-} from './actions'
+} from './actions';
+import { Howl } from 'howler';
 
 const podcasts = (state={
 	isFetching: false,
@@ -66,13 +67,25 @@ const episodes = (state={
 }
 
 const audio = (state={
-	isPlaying: false
+	isPlaying: false,
+	howlInstance: null,
+	episode: null
 }, action) => {
 	switch(action.type){
-		case 'PLAY_EPISODE': 
+		case 'PLAY_EPISODE':
+			const audio = new Howl({
+				src: [action.episode.url]
+			}) 
+			return {
+				...state,
+				isPlaying: true,
+				howlInstance: audio,
+				episode: action.episode
+			}
+		case 'TOGGLE_PLAY_PAUSE':
 			return{
 				...state,
-				isPlaying: true
+				isPlaying: action.isPlaying === true ? false : true
 			}
 		default:
 			return state
