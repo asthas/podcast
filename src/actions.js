@@ -66,3 +66,10 @@ export const fetchEpisodes = (id) => {
 		.then(json => dispatch(receiveEpisodes(id, json)))
 	}
 }
+
+export const playEpisode = (url) => {
+	return{
+		type: 'PLAY_EPISODE',
+		url
+	}
+}

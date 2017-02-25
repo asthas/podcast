@@ -2,7 +2,8 @@ import React from 'react';
 import Episode from './Episode';
 
 const Episodes = ({
-	episodes
+	episodes,
+	onEpisodeClick
 }) => (
 	<div className="episode-list">
 		{episodes.map(episode=>
@@ -14,6 +15,7 @@ const Episodes = ({
 				id={episode.id}
 				isVideo={episode.isVideo}
 				publishedAt={episode.publishedAt}
+				onClick={()=>onEpisodeClick(episode.url)}
 			/>
 		)}
 	</div>

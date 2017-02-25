@@ -65,11 +65,26 @@ const episodes = (state={
 	}
 }
 
+const audio = (state={
+	isPlaying: false
+}, action) => {
+	switch(action.type){
+		case 'PLAY_EPISODE': 
+			return{
+				...state,
+				isPlaying: true
+			}
+		default:
+			return state
+	}
+}
+
 
 const reducers = combineReducers({
 	podcasts,
 	navItems,
-	episodes
+	episodes,
+	audio
 })
 
 export default reducers
