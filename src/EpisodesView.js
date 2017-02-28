@@ -6,6 +6,7 @@ import './css/EpisodesView.css'
 const EpisodesView = () => (
 	<div>
 		<EpisodeList />
+		<Player />
 	</div>
 )
 

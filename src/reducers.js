@@ -75,7 +75,8 @@ const audio = (state={
 		case 'PLAY_EPISODE':
 			const audio = new Howl({
 				src: [action.episode.url]
-			}) 
+			})
+			audio.play() 
 			return {
 				...state,
 				isPlaying: true,

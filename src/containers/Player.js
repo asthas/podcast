@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import { togglePlayPause } from '../actions';
 
 const mapStateToProps = (state) => {
-	console.log(state)
 	return{
 		episode: state.audio.episode,
 		howlInstance: state.audio.howlInstance,
@@ -21,8 +20,8 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 const Player = connect(
-	mapStateToProps
-	// mapDispatchToProps
+	mapStateToProps,
+	mapDispatchToProps
 )(AudioPlayer);
 
 export default Player;
