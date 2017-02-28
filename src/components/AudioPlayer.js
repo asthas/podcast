@@ -12,7 +12,7 @@ class AudioPlayer extends React.Component{
 		})
 		return(
 			<div className="player" >
-				<button onClick={this.props.togglePlay}>
+				<button onClick={() => this.props.togglePlay(this.props.isPlaying)}>
 					<i className={playPauseClass}></i>
 				</button>
 				<div className="progress">
