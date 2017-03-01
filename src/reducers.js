@@ -73,20 +73,33 @@ const audio = (state={
 }, action) => {
 	switch(action.type){
 		case 'PLAY_EPISODE':
-			const audio = new Howl({
+			const audioInstance = new Howl({
 				src: [action.episode.url]
 			})
-			audio.play() 
+			audioInstance.play() 
 			return {
 				...state,
 				isPlaying: true,
-				howlInstance: audio,
+				howlInstance: audioInstance,
 				episode: action.episode
 			}
 		case 'TOGGLE_PLAY_PAUSE':
+			if (state.isPlaying)
+				action.howlInstance.pause()
+			else
+				action.howlInstance.play()	
 			return{
 				...state,
-				isPlaying: action.isPlaying === true ? false : true
+				howlInstance: action.howlInstance,
+				isPlaying: state.isPlaying === true ? false : true
+			}
+		case "PAUSE_EPISODE":
+			action.howlInstance.pause()
+			return{
+				...state,
+				isPlaying: false,
+				howlInstance: action.howlInstance,
+				episode: action.episode
 			}
 		default:
 			return state

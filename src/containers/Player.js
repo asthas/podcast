@@ -13,8 +13,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
 	return {
-		togglePlay: (isPlaying) => {
-			dispatch(togglePlayPause(isPlaying))
+		togglePlay: (howlInstance) => {
+			dispatch(togglePlayPause(howlInstance))
 		}
 	}
 }

@@ -63,9 +63,12 @@
 	display: inline-block;
 	width: 50%;
 	margin-left: 20px;
+	height: 20px;
+	background-color: #eee;
 }
 
-progress{
+.progress-filled{
+	background-color: #0277BD;
 	width: 80%;
 	height: 40px;
 }

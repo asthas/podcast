@@ -12,18 +12,21 @@ class AudioPlayer extends React.Component{
 		})
 		return(
 			<div className="player" >
-				<button onClick={() => this.props.togglePlay(this.props.isPlaying)}>
+				<button onClick={() => this.props.togglePlay(this.props.howlInstance)}>
 					<i className={playPauseClass}></i>
 				</button>
 				<div className="progress">
 					{this.props.howlInstance &&
 						<div>
 							<span className="time-elapsed">
-								{this.props.howlInstance._pos}
+								{this.props.howlInstance.pos()}
 							</span>
-							<progress max='1' value={this.props.howlInstance._onseek}></progress>
+							<div>
+								<div className="progress-filed" value={this.props.howlInstance.seek()}>
+								</div>
+							</div>
 							<span>
-								{this.props.howlInstance._duration}
+								{this.props.howlInstance.duration()}
 							</span>
 						</div>
 					}

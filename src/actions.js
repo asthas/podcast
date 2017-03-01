@@ -74,9 +74,16 @@ export const playEpisode = (episode) => {
 	}
 }
 
-export const togglePlayPause = (isPlaying) => {
+export const pauseEpisode = (episode) => {
+	return{
+		type: 'PAUSE_EPISODE',
+		episode
+	}
+}
+
+export const togglePlayPause = (howlInstance) => {
 	return{
 		type: 'TOGGLE_PLAY_PAUSE',
-		isPlaying
+		howlInstance
 	}
 }
