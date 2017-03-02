@@ -6,7 +6,7 @@ class AudioPlayer extends React.Component{
 		super(props)
 	}
 	handleClick = (e) => {
-			console.log(e)
+		console.log(e)
 	}
 
 	renderPlayer(){
@@ -16,22 +16,20 @@ class AudioPlayer extends React.Component{
 					<i className={this.playPauseClass}></i>
 				</button>
 				<div className="player-controls">
-					{this.props.howlInstance &&
-						<div>
-							<span className="time-elapsed">
-								{this.props.howlInstance.seek()}
-							</span>
-							<div className="progress">
-								<div className="progress-filed" value={this.props.howlInstance.seek()}>
-								</div>
+					<div>
+						<span className="time-elapsed">
+							{this.props.howlInstance.seek()}
+						</span>
+						<div className="progress">
+							<div className="progress-filed" value={this.props.howlInstance.seek()}>
 							</div>
-							<span>
-								{this.props.howlInstance.duration()}
-							</span>
-							<button data-skip="-10" onClick={(e) => this.handleClick(e)}>10</button>
-							<button data-skip="25" onClick={(e) => this.handleClick(e)}>25</button>
 						</div>
-					}
+						<span>
+							{this.props.howlInstance.duration()}
+						</span>
+						<button data-skip="-10" onClick={(e) => this.handleClick(e)}>10</button>
+						<button data-skip="25" onClick={(e) => this.handleClick(e)}>25</button>
+					</div>
 				</div>
 			</div>
 		)
